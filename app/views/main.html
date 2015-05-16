@@ -1,4 +1,36 @@
-<h1>hello</h1>
-<ul>
-    <li ng-repeat = 'data in dataset.medicalData'>{{data}}</li>
-</ul>
+<div class="col-sm-4">
+    <h3>Medications</h3>
+    <ul class = 'medications'>
+        <li ng-repeat = 'data in dataset.medications'>
+            <div ng-repeat = 'med in data.medications'>
+                name: {{med.diuretic[0].name || med.anticoagulants[0].name || med.aceInhibitors[0].name || med.mineral[0].name}}
+                strength: {{med.diuretic[0].strength || med.anticoagulants[0].strength || med.aceInhibitors[0].strength || med.mineral[0].strength}}
+                dose: {{med.diuretic[0].dose || med.anticoagulants[0].dose || med.aceInhibitors[0].dose || med.mineral[0].dose}}
+                route: {{med.diuretic[0].route || med.anticoagulants[0].route || med.aceInhibitors[0].route || med.mineral[0].route}}
+                sig: {{med.diuretic[0].sig || med.anticoagulants[0].sig || med.aceInhibitors[0].sig || med.mineral[0].sig}}
+                pillCount: {{med.diuretic[0].pillCount || med.anticoagulants[0].pillCount || med.aceInhibitors[0].pillCount || med.mineral[0].pillCount}}
+                refills: {{med.diuretic[0].refills || med.anticoagulants[0].refills || med.aceInhibitors[0].refills || med.mineral[0].refills}}
+
+
+
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="col-sm-4">
+    <h3>Labs</h3>
+    <ul class = 'labs'>
+        <li ng-repeat = 'data in dataset.labs'>
+            <div ng-repeat = 'lab in data.labs'>{{lab.name}}, {{lab.time}}, {{lab.location}}</div>
+        </li>
+    </ul>
+</div>
+<div class="col-sm-4">
+    <h3>Imaging</h3>
+    <ul class = 'imaging'>
+        <li ng-repeat = 'data in dataset.imaging'>
+            <div ng-repeat = 'imaging in data.imaging'>{{imaging.name}}, {{imaging.time}}, {{imaging.location}}</div>
+        </li>
+    </ul>
+</div>
